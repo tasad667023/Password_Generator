@@ -12,32 +12,32 @@ var passwordLength = prompt("Choose a password length between 8 and no more than
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 console.log (passwordLength)
 // WHEN prompted for character types to include in the password
-confirm("Do you want lowercase characters?")
-var lowercaseCharacters = ['qwertyuiopasdfghjklzxcvbnm']
-confirm("Do you want uppercase characters?")
-var uppercaseCharacters = ['QWERTYUIOPASDFGHJKLZXCVBNM']
-confirm("Do you want numeric values?")
-var numbers = ['1234567890']
-confirm("Do you want special characters?")
-var specialCharacters = ['~!@#$%^&*()']
+confirm("Do you want lowercase characters?");
+var lowercaseCharacters = 'qwertyuiopasdfghjklzxcvbnm';
+confirm("Do you want uppercase characters?");
+var uppercaseCharacters = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+confirm("Do you want numeric values?");
+var numbers = '1234567890';
+confirm("Do you want special characters?");
+var specialCharacters = '~!@#$%^&*()';
 // THEN I choose lowercase, uppercase, numeric, and/or special characters
 var characterBase=[]
 var randomPassword=[]
 // WHEN I answer each prompt
 if (lowercaseCharacters){
-    characterBase.push(lowercaseCharacters)
+    characterBase = characterBase + lowercaseCharacters;
     console.log (characterBase)
 }
 if (uppercaseCharacters){
-    characterBase.push(uppercaseCharacters)
+    characterBase = characterBase + uppercaseCharacters;
     console.log (characterBase)
 }
 if (numbers){
-    characterBase.push(numbers)
+    characterBase = characterBase + numbers;
     console.log (characterBase)
 }
 if (specialCharacters){
-    characterBase.push(specialCharacters)
+    characterBase = characterBase + specialCharacters;
     console.log (characterBase)
 }
 else {

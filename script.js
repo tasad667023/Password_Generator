@@ -1,63 +1,73 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var characterBase= ""
+var randomPassword= ""
 function generatePassword() {
-    // THEN I am presented with a series of prompts for password criteria
+// THEN I am presented with a series of prompts for password criteria
 
 // WHEN prompted for password criteria
-
 // THEN I select which criteria to include in the password
-
 // WHEN prompted for the length of the password
 var passwordLength = prompt("Choose a password length between 8 and no more than 128 characters.")
+
 // THEN I choose a length of at least 8 characters and no more than 128 characters
+if (passwordLength < 8 || passwordLength > 128){
+    alert ("Please pick a number greater than 8 and less than 128 characters!")
+    return 
+}
 console.log (passwordLength)
+
 // WHEN prompted for character types to include in the password
-confirm("Do you want lowercase characters?");
+var lower = confirm("Do you want lowercase characters?");
 var lowercaseCharacters = 'qwertyuiopasdfghjklzxcvbnm';
-confirm("Do you want uppercase characters?");
+var upper = confirm("Do you want uppercase characters?");
 var uppercaseCharacters = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-confirm("Do you want numeric values?");
+var num = confirm("Do you want numeric values?");
 var numbers = '1234567890';
-confirm("Do you want special characters?");
+var specChar = confirm("Do you want special characters?");
 var specialCharacters = '~!@#$%^&*()';
+
 // THEN I choose lowercase, uppercase, numeric, and/or special characters
-var characterBase=[]
-var randomPassword=[]
+
+
 // WHEN I answer each prompt
-if (lowercaseCharacters){
+if (lower){
     characterBase = characterBase + lowercaseCharacters;
     console.log (characterBase)
 }
-if (uppercaseCharacters){
+if (upper){
     characterBase = characterBase + uppercaseCharacters;
     console.log (characterBase)
 }
-if (numbers){
+if (num){
     characterBase = characterBase + numbers;
     console.log (characterBase)
 }
-if (specialCharacters){
+if (specChar){
     characterBase = characterBase + specialCharacters;
     console.log (characterBase)
 }
-else {
-    return
-}
+
 // THEN my input should be validated and at least one character type should be selected
 
 // WHEN all prompts are answered
 
 // THEN a password is generated that matches the selected criteria
-for (var i=0; i<passwordLength; i++) {
-    
-}
+
 
 // WHEN the password is generated
 
-// THEN the password is either displayed in an alert or written to the page
- 
-  console.log (characterBase);
+for (let i=0; i<passwordLength; i++){
+    randomPassword = randomPassword + characterBase.charAt(Math.floor(Math.random() * Math.floor(characterBase.length)));
 }
+
+return(randomPassword);
+
+}
+
+// THEN the password is either displayed in an alert or written to the page
+
+
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 
